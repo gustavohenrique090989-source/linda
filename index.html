@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<title>Te amo</title>
+
+<style>
+
+body{
+  background: linear-gradient(180deg,#ffd1dc,#ffb6c1);
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  overflow:hidden;
+  font-family:Arial, sans-serif;
+}
+
+/* TEXTO DIGITANDO */
+
+.texto{
+  font-size:70px;
+  font-weight:bold;
+  color:#c2185b;
+  border-right:4px solid #c2185b;
+  white-space:nowrap;
+  overflow:hidden;
+  width:0;
+  animation:digitar 3.5s steps(16) forwards, piscar 0.7s infinite;
+  z-index:10;
+}
+
+@keyframes digitar{
+  from{width:0}
+  to{width:16ch}
+}
+
+@keyframes piscar{
+  50%{border-color:transparent}
+}
+
+/* CORAÇÕES CAINDO */
+
+.coracao{
+  position:absolute;
+  top:-50px;
+  font-size:30px;
+  animation:cair 6s linear infinite;
+}
+
+.coracao:nth-child(2){left:10%; animation-delay:0s}
+.coracao:nth-child(3){left:25%; animation-delay:1s}
+.coracao:nth-child(4){left:40%; animation-delay:2s}
+.coracao:nth-child(5){left:55%; animation-delay:3s}
+.coracao:nth-child(6){left:70%; animation-delay:1.5s}
+.coracao:nth-child(7){left:85%; animation-delay:2.5s}
+
+@keyframes cair{
+  0%{
+    transform:translateY(-10vh) rotate(0deg);
+    opacity:1;
+  }
+  100%{
+    transform:translateY(110vh) rotate(360deg);
+    opacity:0;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="texto">Te amo loirinha ❤️</div>
+
+<div class="coracao">❤️</div>
+<div class="coracao">💖</div>
+<div class="coracao">💕</div>
+<div class="coracao">💗</div>
+<div class="coracao">💘</div>
+<div class="coracao">💞</div>
+
+</body>
+</html>
